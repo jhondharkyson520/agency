@@ -1,9 +1,23 @@
+import styled from "styled-components";
+
+const ButtonContainer = styled.button`
+    font-size: 17px;
+    font-weight: bold;
+    width: 209px;
+    height: 50px;
+    background-color: #473BF0;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+`;
+
 function ButtonGetStarted() {
  
     return (
-      <button>
+      <ButtonContainer>
         Get started a project
-      </button>
+      </ButtonContainer>
     )
   }
   
