@@ -1,9 +1,14 @@
 *{
     margin: 0;    
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body{
     background-color: #FDFDFF;    
     font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    cursor: pointer;
 }

@@ -10,6 +10,7 @@ const ButtonContainer = styled.button`
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    z-index: 100;
 `;
 
 function ButtonGetStarted() {

@@ -25,6 +25,12 @@ const ContainerMain = styled.main`
     justify-content: space-between;
     width: 1200px;
     gap: 50px;
+
+    @media screen and (max-width: 1145px) {
+       flex-direction: column;
+       gap: 0px;
+       margin-top: 3rem;
+    }
 `;
 
 const ContentContainer = styled.div`
@@ -32,6 +38,7 @@ const ContentContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     gap: 30px;
+    width: 550px;
 
     h1{
       color: #F64B4B;
@@ -41,7 +48,7 @@ const ContentContainer = styled.div`
 
     h2{
       color: #161C2D;
-      font-size: 60px;
+      font-size: 52px;
       font-weight: bold;
     }
 
@@ -49,23 +56,109 @@ const ContentContainer = styled.div`
       color: #161C2D;
       font-size: 19px;
     }
+
+    @media screen and (max-width: 1145px) {
+       h1{
+        font-size: 15px;
+        text-align: center;
+       }
+       h2{
+        font-size: 18px;
+        text-align: center;
+       }
+       p{
+        font-size: 13px;
+        text-align: center;
+       }
+       justify-content: center;
+       align-items: center;
+       max-width: 300px;
+    }
 `;
 
 const ImageContainer = styled.div`
+
+    display: flex;
+    width: 463px;
+    height: 504px;
+    position: relative;
+
+    @media screen and (max-width: 1145px) {
+       
+       max-width: 100vw;
+    }
 `;
 
 const BgHero = styled.img`
     position: absolute;
-    min-width: 100%;
+    width: 100%;
 `;
 
 const ImgPerfil = styled.img`
+    
+    position: absolute;
     width: 463px;
-    height: 504px;
+    height: 463px;
+
+    @media screen and (max-width: 1145px) {
+       
+    }
 `;
 
 const ImgPoints = styled.img`
     position: absolute;
+    width: 107px;
+    height: 109px;
+    
+
+    @media screen and (max-width: 1145px) {
+      
+    }
+
+
+`;
+
+const ImgCirculeDark = styled.img`
+    position: absolute;
+    @media screen and (max-width: 1145px) {
+       
+    }
+
+`;
+
+const ImgCirculeGreen = styled.img`
+    position: absolute;
+    @media screen and (max-width: 1145px) {
+       
+    }
+
+`;
+
+const ContainerImgCircules = styled.div`
+    width: 124px;
+    height: 107.06px;
+
+`;
+
+const ImgFill01 = styled.img`
+    position: absolute;
+    @media screen and (max-width: 1145px) {
+        
+    }
+
+`;
+
+const ContainerImgFill = styled.div`
+    width: 24.21px;
+    height: 78.35px;
+    display: flex;
+    gap: 2rem;
+   
+   
+
+    @media screen and (max-width: 1145px) {
+
+    }
 
 `;
 
@@ -84,12 +177,16 @@ function Hero() {
           </ContentContainer>
 
             <ImageContainer>
-                <ImgPerfil src={ImagePerfil} alt="" />
                 <ImgPoints src={ImagePoints} alt="" />
-                <img src={ImageCirculeDark} alt="" />
-                <img src={ImageCirculeGreen} alt="" />
-                <img src={ImageFill} alt="" />
-                <img src={ImageFill} alt="" />
+                <ImgPerfil src={ImagePerfil} alt="" />                
+                <ContainerImgCircules>
+                    <ImgCirculeDark src={ImageCirculeDark} alt="" />
+                    <ImgCirculeGreen src={ImageCirculeGreen} alt="" />
+                </ContainerImgCircules>
+                <ContainerImgFill>
+                    <ImgFill01 src={ImageFill} alt="" />
+                    <ImgFill01 src={ImageFill} alt="" />
+                </ContainerImgFill>
             </ImageContainer>
          </ContainerMain>
 
