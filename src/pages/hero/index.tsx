@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import bgImage from '../../assets/Hero/Bitmap.svg';
 
 import ImageCirculeDark from '../../assets/Hero/Circule-dark.svg';
@@ -11,6 +11,10 @@ import ImagePoints from '../../assets/Hero/Points.svg';
 
 import ButtonGetStarted from "../../components/ButtonGetStarted";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 const HeroContainer = styled.section`
     display: flex;
     flex-direction: column;
@@ -19,14 +23,14 @@ const HeroContainer = styled.section`
 `;
 
 const ContainerMain = styled.main`
-    margin-top: 8rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1200px;
-    gap: 50px;
+    width: 1000px;
+    gap: 30px;
 
-    @media screen and (max-width: 1145px) {
+    @media screen and (max-width: 1000px) {
        flex-direction: column;
        gap: 0px;
        margin-top: 3rem;
@@ -38,7 +42,7 @@ const ContentContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     gap: 30px;
-    width: 550px;
+    width: 50%;
 
     h1{
       color: #F64B4B;
@@ -48,7 +52,7 @@ const ContentContainer = styled.div`
 
     h2{
       color: #161C2D;
-      font-size: 52px;
+      font-size: 45px;
       font-weight: bold;
     }
 
@@ -77,15 +81,20 @@ const ContentContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-
-    display: flex;
-    width: 463px;
-    height: 504px;
     position: relative;
+    display: flex;
+    
+    height: 600px;
+    margin-top: 3rem;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
 
     @media screen and (max-width: 1145px) {
        
        max-width: 100vw;
+       margin-top: 0rem;
+       
     }
 `;
 
@@ -101,93 +110,136 @@ const ImgPerfil = styled.img`
     height: 463px;
 
     @media screen and (max-width: 1145px) {
-       
+        width: 313px;
+        height: 313px;
     }
 `;
 
 const ImgPoints = styled.img`
-    position: absolute;
-    width: 107px;
-    height: 109px;
+    position: relative;
+    
+    bottom: 13rem;
+    left: 2rem;
+    
     
 
     @media screen and (max-width: 1145px) {
-      
+        bottom: 8.3rem;
+        left: 3.5rem;
     }
 
 
 `;
 
 const ImgCirculeDark = styled.img`
-    position: absolute;
+    position: relative;
+    right: 9rem;
+    top: 10rem;
+
+
     @media screen and (max-width: 1145px) {
-       
+        right: 7rem;
+        top: 7rem;
     }
 
 `;
 
 const ImgCirculeGreen = styled.img`
-    position: absolute;
+    position: relative;
+    right: 15.8rem;
+    top: 10.8rem;
+
     @media screen and (max-width: 1145px) {
-       
+        right: 13.8rem;
+        top: 7.8rem;
     }
 
 `;
 
-const ContainerImgCircules = styled.div`
-    width: 124px;
-    height: 107.06px;
-
-`;
 
 const ImgFill01 = styled.img`
-    position: absolute;
+    position: relative;
+    top: 8.3rem;
+    left: 2rem;
+
     @media screen and (max-width: 1145px) {
+        top: 6.7rem;
+        left: -2.5rem;
+    }
+
+`;
+const ImgFill02 = styled.img`
+    position: relative;
+    top: 8.3rem;
+    left: 2.4rem;
+
+    @media screen and (max-width: 1145px) {
+        top: 6.7rem;
+        left: -2.1rem;
+    }
+
+`;
+
+const scaleButton = keyframes`
+  to{
+    transform: scale(1.3);
+  }
+  from{
+    transform: scale(1);
+  }
+
+`;
+
+const ButtonContainer = styled.div`
+    z-index: 100;
+      &:hover{
+        button{
+            background-color: #231f58;
+        }
         
-    }
-
+      }
 `;
 
-const ContainerImgFill = styled.div`
-    width: 24.21px;
-    height: 78.35px;
-    display: flex;
-    gap: 2rem;
-   
-   
-
-    @media screen and (max-width: 1145px) {
-
-    }
-
-`;
 
 function Hero() {
+
+    useEffect(() => {
+        AOS.init();
+      }, []);
  
     return (
       <HeroContainer>
           <Header/>
 
          <ContainerMain>
+
           <ContentContainer>
-              <h1>LET´S SHIFT YOUR BUSINESS</h1>
-              <h2>Shift your business fast with Shade Pro.</h2>
-              <p>With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website within few minutes.</p>
-              <ButtonGetStarted/>
+              <h1  data-aos="zoom-in" data-aos-delay="700">LET´S SHIFT YOUR BUSINESS</h1>
+              <h2 data-aos="fade-right" data-aos-delay="1100">Shift your business fast with Shade Pro.</h2>
+              <p data-aos="zoom-in" data-aos-delay="700">With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website within few minutes.</p>
+              <ButtonContainer data-aos="zoom-in" data-aos-delay="500" >
+                <ButtonGetStarted />
+              </ButtonContainer>
+              
           </ContentContainer>
 
-            <ImageContainer>
-                <ImgPoints src={ImagePoints} alt="" />
-                <ImgPerfil src={ImagePerfil} alt="" />                
-                <ContainerImgCircules>
-                    <ImgCirculeDark src={ImageCirculeDark} alt="" />
-                    <ImgCirculeGreen src={ImageCirculeGreen} alt="" />
-                </ContainerImgCircules>
-                <ContainerImgFill>
-                    <ImgFill01 src={ImageFill} alt="" />
-                    <ImgFill01 src={ImageFill} alt="" />
-                </ContainerImgFill>
+            <ImageContainer data-aos="zoom-in" data-aos-delay="1000">
+
+                <ImgPoints data-aos="zoom-in" src={ImagePoints} alt="" />
+
+                <ImgPerfil data-aos="zoom-in" src={ImagePerfil} alt="" /> 
+
+                <ImgCirculeDark data-aos="zoom-in" src={ImageCirculeDark} alt="" />
+
+                <ImgCirculeGreen data-aos="zoom-in" src={ImageCirculeGreen} alt="" />
+               
+                <ImgFill01 data-aos="zoom-in" src={ImageFill} alt="" />
+                
+                <ImgFill02 data-aos="zoom-in" src={ImageFill} alt="" />
+         
+
             </ImageContainer>
+
          </ContainerMain>
 
           <BgHero src={bgImage} alt=""/>

@@ -24,6 +24,15 @@ const HeaderLinks = styled.a`
       color: #161C2D;
       font-size: 25px;
       cursor: pointer;
+      transition: 1s;
+      
+      
+      
+      &:hover{
+        color: #473BF0;
+        transform: scale(1.3);
+        
+      }
 
       
 `;
