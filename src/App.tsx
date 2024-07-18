@@ -1,5 +1,4 @@
 import Footer from "./components/Footer"
-import Header from "./components/Header"
 import About from "./pages/about"
 import Facts from "./pages/facts"
 import Features from "./pages/features"

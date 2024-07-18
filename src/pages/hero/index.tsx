@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import bgImage from '../../assets/Hero/Bitmap.svg';
 
 import ImageCirculeDark from '../../assets/Hero/Circule-dark.svg';
@@ -180,15 +180,6 @@ const ImgFill02 = styled.img`
 
 `;
 
-const scaleButton = keyframes`
-  to{
-    transform: scale(1.3);
-  }
-  from{
-    transform: scale(1);
-  }
-
-`;
 
 const ButtonContainer = styled.div`
     z-index: 100;
