@@ -8,7 +8,7 @@ import 'aos/dist/aos.css';
 
 const scaleButton = keyframes`
   to{
-    transform: scale(1.3);
+    transform: scale(1.08);
   }
   from{
     transform: scale(1);
@@ -78,7 +78,7 @@ const ButtonContainer = styled.div`
             background-color: #231f58;
         }
 
-        animation: ${scaleButton} 1.5s infinite alternate;
+        animation: ${scaleButton} 0.99s infinite alternate;
         
       }
 

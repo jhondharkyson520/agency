@@ -61,17 +61,17 @@ const ContentContainer = styled.div`
       font-size: 19px;
     }
 
-    @media screen and (max-width: 1145px) {
+    @media screen and (max-width: 620px) {
        h1{
-        font-size: 15px;
+        font-size: 17px;
         text-align: center;
        }
        h2{
-        font-size: 18px;
+        font-size: 20px;
         text-align: center;
        }
        p{
-        font-size: 13px;
+        font-size: 15px;
         text-align: center;
        }
        justify-content: center;
@@ -101,6 +101,7 @@ const ImageContainer = styled.div`
 const BgHero = styled.img`
     position: absolute;
     width: 100%;
+
 `;
 
 const ImgPerfil = styled.img`
