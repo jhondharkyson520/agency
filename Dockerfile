@@ -10,6 +10,7 @@ COPY package*.json ./
 # Instala as dependências do projeto
 RUN npm install
 RUN npm install -g typescript
+RUN npm install -g vite
 RUN npx vite --version
 
 # Copia todos os arquivos do projeto para o diretório de trabalho
