@@ -5,6 +5,13 @@ import img02 from '../../assets/Works/img02.svg';
 import img03 from '../../assets/Works/img03.svg';
 import img04 from '../../assets/Works/img04.svg';
 
+import { FaArrowRight } from 'react-icons/fa';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
+
 const SectionContainer = styled.section`
     display: flex;
     flex-direction: column;
@@ -53,51 +60,115 @@ const ImagesContainer = styled.div`
     width: 1100px;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     gap: 3rem;
+
+    p{
+        margin-top: 1rem;
+        margin-left: 2rem;
+        font-size: 15px;
+    }
+
+    h1{
+        margin-top: 1rem;
+        margin-left: 2rem;
+        font-size: 24px;
+    }
+
+    @media screen and (max-width: 1090px) {
+         width: 500px;
+         text-align: center;
+
+         p{
+            margin-left: 0rem;
+         }
+
+         h1{
+            margin-left: 0rem;
+            font-size: 20px;
+         }
+
+    }
+
+    @media screen and (max-width: 660px) {
+         img{
+            width: 250px;
+         }
+        
+
+    }
 
 `;
 
 const ItemContainer = styled.div`
+    margin-top: 12rem;
 
+    @media screen and (max-width: 660px) {
+        margin-top: 0rem;
+
+    }
+
+    @media screen and (max-width: 1090px) {
+        margin-top: 0rem;
+
+    }
+`;
+
+const LinkSeeAll = styled.a`
+    text-decoration: none;
+    margin-top: 3rem;
+    color: #473BF0;
+    font: 21px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+
+    &:hover{
+        color: #3a3679;
+    }
 `;
 
 function Works() {
+
+    useEffect(()=> {
+        AOS.init();
+    },[]);
  
     return (
       <SectionContainer>
         <TitleContainer>
           <h1>CASE STUDIES</h1>
-          <h2> Our works describe why we are the best in the business</h2>
+          <h2 data-aos="zoom-in" data-aos-delay="150"> Our works describe why we are the best in the business</h2>
         </TitleContainer>
 
         <ImagesContainer>
-            <ItemContainer>
-                <img src={img01} alt="" />
-                <p>Graphic Design</p>
-                <h1>Aura Branding Design</h1>
+            <div data-aos="zoom-in" data-aos-delay="150">
+                <img src={img01} alt="Image Aura Branding Design" />
+                <p data-aos="zoom-in" data-aos-delay="150">Graphic Design</p>
+                <h1 data-aos="zoom-in" data-aos-delay="150">Aura Branding Design</h1>
+            </div>
+
+            <div data-aos="zoom-in" data-aos-delay="150">
+                <img src={img02} alt="Image snack package mockup" />
+                <p data-aos="zoom-in" data-aos-delay="150">Graphic Design</p>
+                <h1 data-aos="zoom-in" data-aos-delay="150">AB.S Snack Packaging</h1>
+            </div>
+
+            <ItemContainer data-aos="zoom-in" data-aos-delay="150">
+                <img src={img03} alt="Image Making Gradients Great Again" />
+                <p data-aos="zoom-in" data-aos-delay="150">Web Development</p>
+                <h1 data-aos="zoom-in" data-aos-delay="150">Gradient Website Development</h1>
             </ItemContainer>
 
-            <ItemContainer>
-                <img src={img02} alt="" />
-                <p>Graphic Design</p>
-                <h1>AB.S Snack Packaging</h1>
-            </ItemContainer>
-
-            <ItemContainer>
-                <img src={img03} alt="" />
-                <p>Web Development</p>
-                <h1>Gradient Website Development</h1>
-            </ItemContainer>
-
-            <ItemContainer>
-                <img src={img04} alt="" />
-                <p>Content Writing</p>
-                <h1>Magazine Content Writing</h1>
-            </ItemContainer>
+            <div data-aos="zoom-in" data-aos-delay="150">
+                <img src={img04} alt="Image Magazine Mockup" />
+                <p data-aos="zoom-in" data-aos-delay="150">Content Writing</p>
+                <h1 data-aos="zoom-in" data-aos-delay="150">Magazine Content Writing</h1>
+            </div>
         </ImagesContainer>
 
-        <a href="#">See all works --- </a>
+        <LinkSeeAll href="#">See all works <FaArrowRight/></LinkSeeAll>
         
       </SectionContainer>
     )
