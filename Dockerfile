@@ -12,6 +12,7 @@ RUN npm install
 RUN npm install -g typescript
 RUN npm install -g vite
 RUN npx vite --version
+RUN npm install aos --save
 
 # Copia todos os arquivos do projeto para o diretório de trabalho
 COPY . .
