@@ -1,12 +1,12 @@
 import Footer from "./components/Footer"
-import About from "./pages/about"
-import Facts from "./pages/facts"
-import Features from "./pages/features"
-import Hero from "./pages/hero"
-import Services from "./pages/services"
-import Testimonial01 from "./pages/testimonial01"
-import Testimonial02 from "./pages/testimonial02"
-import Works from "./pages/works"
+import About from "./views/about"
+import Facts from "./views/facts"
+import Features from "./views/features"
+import Hero from "./views/hero"
+import Services from "./views/services"
+import Testimonial01 from "./views/testimonial01"
+import Testimonial02 from "./views/testimonial02"
+import Works from "./views/works"
 
 function App() {
  
